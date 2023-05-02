@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://kk6kqlxolxex"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_c77h2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2wdj"]
+albedo_color = Color(1, 0.4, 0.4, 1)
+emission_enabled = true
+emission = Color(1, 0.568627, 0, 1)
+emission_energy_multiplier = 2.81
+
+[node name="Torch" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_c77h2")
+surface_material_override/0 = SubResource("StandardMaterial3D_n2wdj")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.662745, 0.447059, 1)
+light_energy = 9.556
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.333
+shadow_enabled = true
+distance_fade_begin = 0.0
+distance_fade_length = 522.0
+omni_range = 100.793

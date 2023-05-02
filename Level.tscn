@@ -1,0 +1,286 @@
+[gd_scene load_steps=22 format=3 uid="uid://ch3c5cd27hhj8"]
+
+[ext_resource type="PackedScene" uid="uid://cntx5ho41n5be" path="res://Gem.tscn" id="1_adgw4"]
+[ext_resource type="PackedScene" uid="uid://clgrrq81vc5md" path="res://Mockup.tscn" id="1_ut7o3"]
+[ext_resource type="AudioStream" uid="uid://b5aw4exc7vew" path="res://bgm.mp3" id="2_kvaqb"]
+[ext_resource type="PackedScene" uid="uid://kk6kqlxolxex" path="res://Torch.tscn" id="3_uhk2n"]
+[ext_resource type="PackedScene" uid="uid://cknhr0gy3pqv3" path="res://Platform.tscn" id="4_o37li"]
+[ext_resource type="Texture2D" uid="uid://bgu5urxpfpihr" path="res://textures/rock 3.png" id="4_r25r3"]
+[ext_resource type="Texture2D" uid="uid://e8g5p6oc1l1h" path="res://textures/lavafull.jpg" id="7_06poc"]
+[ext_resource type="Texture2D" uid="uid://d3iq56odsfauo" path="res://textures/tilable-img_0044-verydark.png" id="7_8ouqp"]
+[ext_resource type="PackedScene" uid="uid://du1grdxx218pl" path="res://Player.tscn" id="7_ess6d"]
+[ext_resource type="Texture2D" uid="uid://bed6pmiu4nlga" path="res://textures/crete935a.png" id="9_2tge8"]
+
+[sub_resource type="Environment" id="Environment_p0mau"]
+tonemap_mode = 3
+ssao_enabled = true
+ssao_radius = 4.29
+ssao_intensity = 5.29
+ssil_enabled = true
+glow_enabled = true
+glow_intensity = 4.8
+fog_enabled = true
+fog_light_color = Color(0.505882, 0.427451, 0.290196, 1)
+fog_density = 0.002
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_88vpo"]
+dof_blur_amount = 1.0
+auto_exposure_min_sensitivity = 235.29
+
+[sub_resource type="BoxMesh" id="BoxMesh_t5lvo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aupnh"]
+load_path = "res://.godot/imported/tileable1f_0.png-eeea6330847ea73555a4cf99ae3629b8.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mu481"]
+albedo_texture = SubResource("CompressedTexture2D_aupnh")
+uv1_scale = Vector3(15, 15, 15)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.999999
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgn1o"]
+albedo_texture = ExtResource("7_8ouqp")
+uv1_scale = Vector3(15, 15, 15)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.999999
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34633"]
+albedo_texture = ExtResource("7_06poc")
+emission_enabled = true
+emission_texture = ExtResource("7_06poc")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evqnx"]
+albedo_texture = ExtResource("7_06poc")
+uv1_scale = Vector3(15, 15, 15)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.999999
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbglt"]
+albedo_texture = ExtResource("4_r25r3")
+uv1_scale = Vector3(10.693, 10.693, 10.693)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.812252
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01na2"]
+albedo_texture = ExtResource("9_2tge8")
+uv1_scale = Vector3(10.693, 10.693, 10.693)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.812252
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2yer"]
+albedo_texture = ExtResource("7_06poc")
+uv1_scale = Vector3(10.693, 10.693, 10.693)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.812252
+
+[node name="Level" type="Node3D"]
+transform = Transform3D(1.00254, 0, 0, 0, 1.00254, 0, 0, 0, 1.00254, -99.3667, 0, 30.9408)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_p0mau")
+
+[node name="Player" parent="." instance=ExtResource("7_ess6d")]
+transform = Transform3D(0.98809, 0, -0.153883, 0, 1, 0, 0.153883, 0, 0.98809, 38.9998, 6.75136, -38.3943)
+
+[node name="Items" type="Node3D" parent="."]
+
+[node name="Gem" parent="Items" instance=ExtResource("1_adgw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.79579, -42.0794)
+
+[node name="Gem6" parent="Items" instance=ExtResource("1_adgw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64325, 4.98285)
+
+[node name="Gem7" parent="Items" instance=ExtResource("1_adgw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64325, 14.6784)
+
+[node name="Gem8" parent="Items" instance=ExtResource("1_adgw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3171, 1.64325, 22.5539)
+
+[node name="Gem2" parent="Items" instance=ExtResource("1_adgw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03283, -1.79579, -42.0794)
+
+[node name="Gem3" parent="Items" instance=ExtResource("1_adgw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6824, -1.79579, -42.0795)
+
+[node name="Gem4" parent="Items" instance=ExtResource("1_adgw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.325, -1.79579, -42.0795)
+
+[node name="Gem5" parent="Items" instance=ExtResource("1_adgw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.534, -1.79579, -42.0795)
+
+[node name="Torch" parent="Items" instance=ExtResource("3_uhk2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1592, 2.85803, -29.5317)
+
+[node name="Torch3" parent="Items" instance=ExtResource("3_uhk2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.2384, 2.85803, -29.5317)
+
+[node name="Torch4" parent="Items" instance=ExtResource("3_uhk2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.0181, 2.85803, -29.5317)
+
+[node name="Platform" parent="Items" instance=ExtResource("4_o37li")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98733, -1.99493, -36.9063)
+
+[node name="Platform2" parent="Items" instance=ExtResource("4_o37li")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48133, -1.99493, 12.0865)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.997467, 0, 0, 0, 0.768883, 0.63542, 0, -0.63542, 0.768883, 0, 34.5745, 12.0619)
+visible = false
+attributes = SubResource("CameraAttributesPractical_88vpo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.671514, 0.740992, 0, -0.740992, 0.671514, 0, 10.9809, 6.53462)
+light_color = Color(1, 0.956863, 0.72549, 1)
+light_energy = 0.333
+shadow_enabled = true
+editor_only = true
+directional_shadow_max_distance = 1078.2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kvaqb")
+volume_db = -8.432
+autoplay = true
+
+[node name="Mockup" parent="." instance=ExtResource("1_ut7o3")]
+
+[node name="Internal" type="Node3D" parent="Mockup"]
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(13.12, 0, -32.5213, 0, 0.434263, 0, 10.7267, 0, 39.7772, 46.5858, -3.16482, -106.346)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(-1.56272, 0, 29.9614, 0, 0.434263, 0, -17.3318, 0, -2.70141, 73.8096, -3.16482, -126.31)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(-16.9074, 1.09225e-10, 3.499, 0.35306, 0.413446, 15.681, -1.09879, 0.132846, -48.8027, 10.1085, 1.02382, -97.0221)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(16.9467, 0, 0, 0, 0.434264, 0, 0, 0, 27.9149, 8.63789, -5.72705, -64.2438)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(86.7574, 0, 0, 0, 0.188585, 0, 0, 0, 42.3573, 29.1201, -3.65671, -42.838)
+mesh = SubResource("BoxMesh_t5lvo")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(60.2954, 0, 0, 0, 0.188585, 0, 0, 0, 42.3573, 147.704, -3.65671, -33.8326)
+mesh = SubResource("BoxMesh_t5lvo")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(60.2954, 0, 0, 0, 0.188585, 0, 0, 0, 42.3573, 238.139, 7.66579, -33.8326)
+mesh = SubResource("BoxMesh_t5lvo")
+surface_material_override/0 = SubResource("StandardMaterial3D_hgn1o")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(56.2681, 0, 0, 0, 0.188585, 0, 0, 0, 59.4298, 115.251, -5.00001, -120.576)
+mesh = SubResource("BoxMesh_t5lvo")
+surface_material_override/0 = SubResource("StandardMaterial3D_34633")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(16.9469, 0, 0, 0, 0.434264, 0, 0, 0, 27.915, -16.4282, -4.56274, -42.1747)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(16.9467, 0, 0, 0, 0.434264, 0, 0, 0, 27.9149, 33.1691, -1.58929, -15.4592)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(9.17471, 0, -23.4702, 0, 0.434264, 0, 14.2484, 0, 15.1127, 25.0139, -1.58929, -2.50214)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(27.4834, 0, -30.1498, 0, 0.434264, 0, 42.6819, 0, 19.4139, -1.15078, -4.62248, 12.5681)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_evqnx")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(-1.60373, 0, -64.0327, 0, 0.434264, 0, 18.7644, 0, -5.47265, 93.5357, -0.650255, -33.135)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(-1.4851, -0.0942361, -24.9386, -0.330136, 0.423916, -5.54383, 17.8005, 0, -2.18344, 185.287, -0.650255, -33.1351)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(-1.50003, -0.0724441, -25.1894, -0.253792, 0.428179, -4.26183, 17.8005, 0, -2.18345, 204.904, 3.18994, -33.1351)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(-18.8154, 0, 2.76515, 0.323669, 0.398116, 25.6465, -0.742863, 0.173461, -58.8622, 143.694, -17.243, 11.8792)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(16.9468, 0, 0, 0, 0.434264, 0, 0, 0, 27.9149, 95.4886, -6.06881, -15.4592)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(16.9467, 0, 0, 0, 0.434264, 0, 0, 0, 51.3792, 33.1691, -2.96926, -64.2438)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Mockup/Internal"]
+transform = Transform3D(16.9467, 0, 0, 0, 0.434264, 0, 0, 0, 51.3793, 10.7323, 8.6478, -142.749)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mu481")
+
+[node name="External" type="Node3D" parent="Mockup"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Mockup/External"]
+transform = Transform3D(525.799, 0, 0, 0, 0.434263, 0, 0, 0, 430.653, 20.4157, -45.9171, -144.928)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qbglt")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Mockup/External"]
+transform = Transform3D(368.354, 0, 0, 0, 0.434263, 0, 0, 0, 212.924, 20.4157, -40.6704, -209.064)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_01na2")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Mockup/External"]
+transform = Transform3D(49.478, 0, -57.4224, 0, 0.434263, 0, 89.1689, 0, 31.8625, -26.6019, -40.6704, 7.8251)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_01na2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Mockup/External"]
+transform = Transform3D(92.7812, 0, 0, 0, 0.434263, 0, 0, 0, 91.3872, 270.075, -40.6704, -47.2757)
+mesh = SubResource("BoxMesh_t5lvo")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_i2yer")
+
+[node name="Storage" type="Node3D" parent="Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.7661, 0, 0)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cknhr0gy3pqv3"]
+
+[ext_resource type="Texture2D" uid="uid://bed6pmiu4nlga" path="res://textures/crete935a.png" id="1_j5ugr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7p0td"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2u3td"]
+albedo_texture = ExtResource("1_j5ugr")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uuyye"]
+
+[node name="Platform" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.2, 0, 0, 0, 7.056, 0, 0, 0, 4.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_7p0td")
+surface_material_override/0 = SubResource("StandardMaterial3D_2u3td")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_uuyye")

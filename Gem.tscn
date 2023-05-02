@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cntx5ho41n5be"]
+
+[ext_resource type="Script" path="res://MeshInstance3D.gd" id="1_u6q7k"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_h8dcw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pux8t"]
+albedo_color = Color(1, 1, 0, 1)
+metallic = 0.64
+metallic_specular = 0.73
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_on74s"]
+
+[node name="Gem" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.000610904, 1, 0, -1, 0.000610904, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("TorusMesh_h8dcw")
+surface_material_override/0 = SubResource("StandardMaterial3D_pux8t")
+script = ExtResource("1_u6q7k")
+
+[node name="CollisionShape3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShape3D"]
+transform = Transform3D(2.2361, 0, 0, 0, 2.2361, 0, 0, 0, 2.2361, 0, 0, 0)
+shape = SubResource("SphereShape3D_on74s")

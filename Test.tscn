@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmc3b5x4esjmm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_taf0o"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_dp2rr"]
+material = SubResource("StandardMaterial3D_taf0o")
+
+[sub_resource type="Environment" id="Environment_iakpp"]
+tonemap_mode = 3
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_vfxw7"]
+
+[node name="Test" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_dp2rr")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iakpp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(23.5129, 0, 0, 0, 1, 0, 0, 0, 21.1547, 0.0584022, -1.42917, 0.213021)
+visible = false
+mesh = SubResource("BoxMesh_vfxw7")
